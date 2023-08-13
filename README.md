@@ -20,7 +20,7 @@ https://www.canva.com/design/DAFqSpBPKlo/GUFwKdpUs-AdmyNgq8ca5Q/view?utm_content
 4. Atestamint Subgraph API Endpoint - https://api.studio.thegraph.com/query/51108/atestamint-testing/v1.0.0
 
 
-#### Optimism
+### Optimism
 
 1. AtestamintV2 - https://optimistic.etherscan.io/address/0x23a76896B1B49CF4af4ad5e45c4E98BFbA7F0ddc#code
 2. Vault Implementation - https://optimistic.etherscan.io/address/0x609BC1aAbBB373A6DFaE8CAeBD964404e88EF3ba#code
@@ -38,3 +38,10 @@ The platform also generates an 'Atestamint Score' which is an on-chain reputatio
 ## How It's Made
 
 Sponsor Technologies: Worldcoin: WorldID is used to provide sybil resistance to the platform, ensuring that real users are minting NFTs, creating milestones, and making attesting. It also ensures one person one vote. Zora: the Atestamint factory contract utilizes createDrops and createEditions to let creators deploy and mint NFTs on Optimism and Zora simply, safely and quickly. Graph: A custom subgraph queries our two contracts in order to provide an Atestamint score. Other platforms can use these graphs in order to attain Atestamint scores of our projects and provide differentiated services. EAS: The platform uses Ethereum Attestation Service to create attestations schemas and manage them. Users vote through attestations and the attestation data is kept on-chain. Covalent: The platform functions like an NFT launchpad and we attain NFT data such as transaction history, from Covalent’s APIs on the front end. OptimismRetroPGF: Atestamint is launched on Optimism with a key function for anyone to create projects and milestones and have a community of users attest to their completion. This can be done proactively or retroactively. Platforms like Gitcoin can create a Atestamint project and bring a community of users to attest on the project and unlock a vault of funds. Charities can utilize Atestamint to raise funds and unlock it when milestones are met. The Atestamint Scoring system measures people, products and their projects and tracks their impact on-chain. Contracts: Atestamint Contract: Deploys NFT collections using Zora Factory with user input parameters, tied to the Vault contract. Deploys proxy Vault contracts for controlled interactions. Links NFTs to recipient addresses through Vault contracts. Vault Contract: Verifies genuine human voters with WorldID. Manages attestations via Ethereum Attestation Service (EAs). Tracks positive and negative votes. Unlocks funds based on voting and criteria. Allows schema updates via updateSchemaId function. Particularly Hacky Details: The Atestamint score wasn’t part of the original idea, but we realized that the data the platform was generating and that was available on-chain could be used for other platforms to discern on-chain credibility, so we decided to use the Graph. We looked at Charity ratings for inspiration when it came to rating a project’s ability to meet their roadmaps and came across Charity Navigator’s ‘Beacon System.’ Using this as a modal, we came up with a weighted formula. Fulfillment Score (F): Calculated as A / B (where A is the number of completed milestones, and B is the total number of milestones). Attestation Ratio (R): Calculated as X / C (where X is the number of attestations, and C is the total number of unique minters). Attestation Rate (A): Calculated as Y / T (where Y is the number of attestations, and T is the time period between mint out and unlock). - in days Other hacky details would be getting around the difficulty of working on EAS and WorldID at the same time (...WorldCoin works in Eth goerli and doesn’t work in Op goerli EAS works in op goerli and doesn’t work in eth goerli) so it required us to test them separately until we deployed on mainnet.
+
+## Made with 💌 by
+
+@richardkingxyz
+@deeluckystar
+@fabianferno
+@gabrielantonyxaviour
